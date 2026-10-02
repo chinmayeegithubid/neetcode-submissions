@@ -1,0 +1,12 @@
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev = None
+        current = head
+
+        while current:
+            next_node = current.next  # Save the next node
+            current.next = prev       # Reverse the pointer
+            prev = current            # Move prev forward
+            current = next_node       # Move current forward
+
+        return prev
